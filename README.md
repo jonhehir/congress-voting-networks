@@ -1,4 +1,4 @@
-# House of Representatives Voting Networks
+# Congressional Voting Networks
 
 ## Sources
 
@@ -13,13 +13,19 @@ The data comes from voteview.com:
 
 ## How to Run
 
-First, you need to acquire two files from voteview:
+First, you need to acquire four files from voteview:
 
-- Member Ideology (House, All Congresses, CSV)
-- Members' Votes (House, All Congresses, CSV)
+- Member Ideology (House, All Congresses, CSV), `Hall_votes.csv`
+- Members' Votes (House, All Congresses, CSV), `Hall_members.csv`
+- Member Ideology (Senate, All Congresses, CSV), `Sall_votes.csv`
+- Members' Votes (Senate, All Congresses, CSV), `Sall_members.csv`
 
-The first file is cranked through `agreements.py` to produce a tab-delimited file that shows the number of agreements (if >0) between any pair of congressmen across every congressional session. Running this over multiple cores will speed up the result. I think I used about 10 cores, and it took like 15 minutes.
+Update `agreements.py` to reference the votes CSV that you wish to tally. This will produce a tab-delimited file that shows the number of agreements (if >0) between any pair of congressmen across every congressional session. The House takes longer to run than the Senate and benefits from running over multiple cores.
 
-Next, to find the vote thresholds, use `thresholds.R` to combine the pairwise data from `agreements.tsv` with the member ideology data you've downloaded. This script will output a file called `thresholds.tsv`.
+Next, to find the vote thresholds, use `thresholds.R` to combine the pairwise data from `agreements.tsv` with the member ideology data you've downloaded. Again, update file paths as necessary for House vs. Senate.
 
-Finally, we have the data we need to construct networks. Use `networkize.R` to finish the job.
+Finally, we have the data we need to construct networks. Use `networkize.R` to finish the job, updating paths as appropriate.
+
+### Why Separate House vs. Senate and Path Craziness?
+
+I originally ran this for just the House, then wanted the Senate. It's not perfect, but the code was there.

@@ -53,7 +53,7 @@ def print_error(e):
 
 if __name__ == "__main__":
     # read in votes (takes a bit, ~500 MB)
-    votes = read_votes("Hall_votes.csv")
+    votes = read_votes("Sall_votes.csv")
 
     # tally and print agreements (also takes a bit)
     multiprocessing.log_to_stderr()

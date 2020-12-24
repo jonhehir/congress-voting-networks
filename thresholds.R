@@ -2,9 +2,9 @@ library(tidyverse)
 
 # read data
 
-agreements <- read_tsv("agreements.tsv",
+agreements <- read_tsv("agreements-senate.tsv",
                  col_names = c("congress", "a", "b", "agreements"))
-members <- read_csv("Hall_members.csv")
+members <- read_csv("Sall_members.csv")
 
 # play with data
 
@@ -44,7 +44,7 @@ find_threshold <- function(data, density_adjust = 2) {
 thresholds <- tibble(congress = unique(agreements_p$congress)) %>%
   mutate(threshold = map_dbl(congress, function(c) find_threshold(filter(agreements_p, congress == c))))
 
-write_tsv(thresholds, "thresholds.tsv")
+write_tsv(thresholds, "thresholds-senate.tsv")
 
 # plot data
 
@@ -56,9 +56,11 @@ plot_threshold <- function(c) {
 
 for(congress in thresholds$congress) {
   plot_threshold(congress) +
-    ggsave(sprintf("plots/threshold-%03d.png", congress))
+    ggsave(sprintf("plots-senate/threshold-%03d.png", congress))
 }
 
-# All look good to me except 15, 16, 17.
+# House looks good to me except 15, 16, 17.
 # The shape of these years is different, and it's not clear
 # what a reasonable threshold would be.
+# Senate looks good for 41+.
+# Earlier years are harder to deal with.
