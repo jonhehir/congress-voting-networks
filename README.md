@@ -3,7 +3,7 @@
 ![U.S. Senate Voting Networks](doc/networks-senate.png)
 
 Networks of voting similarity for U.S. House and Senate for each session of Congress  
-*(Pictured above are the 70th and 110th Senate.)*
+*(Pictured above are the 70th (left) and 110th (right) Senate.)*
 
 ## Sources
 
