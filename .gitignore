@@ -2,4 +2,4 @@
 *.tsv
 *.sqlite
 *.dta
-*.png
+plots*/*.png
