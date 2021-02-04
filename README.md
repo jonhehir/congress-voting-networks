@@ -2,7 +2,8 @@
 
 ![U.S. Senate Voting Networks](doc/networks-senate.png)
 
-Networks of voting similarity for U.S. House and Senate for each session of Congress. (Pictured above are the 70th and 110th Senate.)
+Networks of voting similarity for U.S. House and Senate for each session of Congress  
+*(Pictured above are the 70th and 110th Senate.)*
 
 ## Sources
 
@@ -33,3 +34,10 @@ Finally, we have the data we need to construct networks. Use `networkize.R` to f
 ### Seriously, I have to update paths and stuff?
 
 Yes. This code was intended to be run in an ad hoc/one-off fashion, and I originally only cared about the House. Later I decided to do the Senate as well. At that point, it was run in a *two-off* fashion. It's not perfect, but it's something.
+
+### Dependencies
+
+- Python (tested on 3.6)
+- R (tested on 4.0)
+    - `network`
+    - `tidyverse`

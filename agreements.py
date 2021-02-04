@@ -52,7 +52,7 @@ def print_error(e):
 
 
 if __name__ == "__main__":
-    # read in votes (takes a bit, ~500 MB)
+    # read in votes
     votes = read_votes("Sall_votes.csv")
 
     # tally and print agreements (also takes a bit)
