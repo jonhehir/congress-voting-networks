@@ -9,12 +9,11 @@ Networks of voting similarity for U.S. House and Senate for each session of Cong
 
 This analysis was originally perfomed in:
 
-> The Rise of Partisanship and Super-Cooperators in the U.S. House of Representatives
-Andris C, Lee D, Hamilton MJ, Martino M, Gunning CE, et al. (2015) The Rise of Partisanship and Super-Cooperators in the U.S. House of Representatives. PLOS ONE 10(4): e0123507. https://doi.org/10.1371/journal.pone.0123507
+> Andris C, Lee D, Hamilton MJ, Martino M, Gunning CE, et al. (2015). *The Rise of Partisanship and Super-Cooperators in the U.S. House of Representatives.* PLOS ONE 10(4): e0123507.
 
 The data comes from voteview.com:
 
-> Lewis, Jeffrey B., Keith Poole, Howard Rosenthal, Adam Boche, Aaron Rudkin, and Luke Sonnet (2020). Voteview: Congressional Roll-Call Votes Database. https://voteview.com/ 
+> Lewis, Jeffrey B., Keith Poole, Howard Rosenthal, Adam Boche, Aaron Rudkin, and Luke Sonnet (2020). *Voteview: Congressional Roll-Call Votes Database.* https://voteview.com/ 
 
 ## How to Run
 
@@ -31,9 +30,7 @@ Next, to find the vote thresholds, use `thresholds.R` to combine the pairwise da
 
 Finally, we have the data we need to construct networks. Use `networkize.R` to finish the job, updating paths as appropriate.
 
-### Seriously, I have to update paths and stuff?
-
-Yes. This code was intended to be run in an ad hoc/one-off fashion, and I originally only cared about the House. Later I decided to do the Senate as well. At that point, it was run in a *two-off* fashion. It's not perfect, but it's something.
+**What's with all the hardcoded paths?** This code was intended to be run in an ad hoc/one-off fashion for the House of Representatives. Later I decided to do the Senate as well. Unfortunately, it was never really intended to be pretty.
 
 ### Dependencies
 
